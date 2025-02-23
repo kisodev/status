@@ -27,7 +27,7 @@ status-website:
   cname: status.dev.slce.moe
   logoUrl: https://github.com/kisodev.png
   name: Kiso Status
-  introTitle: kisodev's status page
+  introTitle: ヽ(・∀・)ﾉ
   introMessage: Hello, World!
   navbar:
     - title: Status
