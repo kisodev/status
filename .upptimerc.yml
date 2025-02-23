@@ -23,7 +23,7 @@ status-website:
   logoUrl: https://github.com/kisodev.png
   name: Kiso Status
   introTitle: kisodev's status page
-  introMessage: Hello There :D
+  introMessage: Hello, World!
   navbar:
     - title: Status
       href: /
