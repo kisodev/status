@@ -1,4 +1,4 @@
-name: Notify
+name: Notify Discord on GitHub Issue Events
 
 on:
   issues:
@@ -17,10 +17,12 @@ jobs:
           ISSUE_URL: ${{ github.event.issue.html_url }}
           ISSUE_USER: ${{ github.event.issue.user.login }}
         run: |
+          echo "Sending Discord notification..."
           curl -X POST "$DISCORD_WEBHOOK" \
-          -H "Content-Type: application/json" \
-          -d @- <<EOF
-          {
-            "content": "🛎️ **Issue \`${ISSUE_ACTION}\`** by \`${ISSUE_USER}\`\n🔖 **${ISSUE_TITLE}**\n🔗 ${ISSUE_URL}"
-          }
-EOF
+            -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg action "$ISSUE_ACTION" \
+              --arg user "$ISSUE_USER" \
+              --arg title "$ISSUE_TITLE" \
+              --arg url "$ISSUE_URL" \
+              '{content: "🛎️ Issue \($action) by \($user)\n🔖 \($title)\n🔗 \($url)"}')"
