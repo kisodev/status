@@ -1,0 +1,26 @@
+name: Notify
+
+on:
+  issues:
+    types: [opened, closed]
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send issue event to Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          ISSUE_ACTION: ${{ github.event.action }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+        run: |
+          curl -X POST "$DISCORD_WEBHOOK" \
+          -H "Content-Type: application/json" \
+          -d @- <<EOF
+          {
+            "content": "🛎️ **Issue \`${ISSUE_ACTION}\`** by \`${ISSUE_USER}\`\n🔖 **${ISSUE_TITLE}**\n🔗 ${ISSUE_URL}"
+          }
+EOF
