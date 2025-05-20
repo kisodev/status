@@ -26,3 +26,14 @@ jobs:
               --arg title "$ISSUE_TITLE" \
               --arg url "$ISSUE_URL" \
               '{content: "🛎️ Issue \($action) by \($user)\n🔖 \($title)\n🔗 \($url)"}')"
+          echo "Send notification successfully."
+          echo "Sending Discord notification 2..."
+          curl -X POST "$DISCORD_WEBHOOK_2" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg action "$ISSUE_ACTION" \
+              --arg user "$ISSUE_USER" \
+              --arg title "$ISSUE_TITLE" \
+              --arg url "$ISSUE_URL" \
+              '{content: "🛎️ Issue \($action) by \($user)\n🔖 \($title)\n🔗 \($url)"}')"
+          echo "Send notification successfully."
