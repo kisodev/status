@@ -20,7 +20,7 @@ jobs:
         run: |
           echo "Extracting issue number..."
           ISSUE_NUMBER=$(echo "$ISSUE_URL" | awk -F'/' '{print $NF}')
-          CUSTOM_URL="https://status.io/issue/$ISSUE_NUMBER"
+          CUSTOM_URL="https://status.dev.slce.moe/incident/$ISSUE_NUMBER"
 
           MESSAGE="$(jq -n \
             --arg title "$ISSUE_TITLE" \
