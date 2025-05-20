@@ -27,10 +27,6 @@ sites:
     assignees:
       - soralis0912
       - neroices
-  - name: TEST WitAqua Git
-    url: https://git.witaqua.org
-    assignees:
-      - neroices
 
 status-website:
   cname: status.dev.slce.moe
