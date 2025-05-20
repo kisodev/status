@@ -22,8 +22,8 @@ sites:
     assignees:
       - soralis0912
       - neroices
-  - name: Kisotest Status
-    url: https://status.deb.slce.moe
+  - name: Kisodev Status
+    url: https://status.dev.slce.moe
     assignees:
       - neroices
 
