@@ -27,8 +27,8 @@ sites:
     assignees:
       - soralis0912
       - neroices
-  - name: WitAqua Test
-    url: https://test.witaqua.org
+  - name: TEST WitAqua Git
+    url: https://git.witaqua.org
     assignees:
       - neroices
 
