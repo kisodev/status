@@ -27,6 +27,10 @@ sites:
     assignees:
       - soralis0912
       - neroices
+  - name: WitAqua Test
+    url: https://test.witaqua.org
+    assignees:
+      - neroices
 
 status-website:
   cname: status.dev.slce.moe
