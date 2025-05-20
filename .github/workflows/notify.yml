@@ -27,7 +27,7 @@ jobs:
             --arg action "$ISSUE_ACTION" \
             --arg user "$ISSUE_USER" \
             --arg url "$CUSTOM_URL" \
-            '{content: "\($title)\n\n\($action) by: \($user)\nURL: \($url)"}')"
+            '{content: "\($title)\n\n\($action) by: \@($user)\nURL: \($url)"}')"
 
           echo "Sending Discord notification 1..."
           curl -X POST "$DISCORD_WEBHOOK" \
