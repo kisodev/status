@@ -22,6 +22,12 @@ jobs:
           ISSUE_NUMBER=$(echo "$ISSUE_URL" | awk -F'/' '{print $NF}')
           CUSTOM_URL="https://status.dev.slce.moe/incident/$ISSUE_NUMBER"
 
+          if [ "$ISSUE_ACTION" = "closed" ]; then
+            DISPLAY_TITLE="[RESOLVED] $ISSUE_TITLE"
+          else
+            DISPLAY_TITLE="$ISSUE_TITLE"
+          fi
+
           MESSAGE="$(jq -n \
             --arg title "$ISSUE_TITLE" \
             --arg action "$ISSUE_ACTION" \
