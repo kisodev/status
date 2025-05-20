@@ -18,23 +18,25 @@ jobs:
           ISSUE_URL: ${{ github.event.issue.html_url }}
           ISSUE_USER: ${{ github.event.issue.user.login }}
         run: |
-          echo "Sending Discord notification..."
+          echo "Extracting issue number..."
+          ISSUE_NUMBER=$(echo "$ISSUE_URL" | awk -F'/' '{print $NF}')
+          CUSTOM_URL="https://status.io/issue/$ISSUE_NUMBER"
+
+          MESSAGE="$(jq -n \
+            --arg title "$ISSUE_TITLE" \
+            --arg action "$ISSUE_ACTION" \
+            --arg user "$ISSUE_USER" \
+            --arg url "$CUSTOM_URL" \
+            '{content: "\($title)\n\n\($action) by: \($user)\nURL: \($url)"}')"
+
+          echo "Sending Discord notification 1..."
           curl -X POST "$DISCORD_WEBHOOK" \
             -H "Content-Type: application/json" \
-            -d "$(jq -n \
-              --arg action "$ISSUE_ACTION" \
-              --arg user "$ISSUE_USER" \
-              --arg title "$ISSUE_TITLE" \
-              --arg url "$ISSUE_URL" \
-              '{content: "🛎️ Issue \($action) by \($user)\n🔖 \($title)\n🔗 \($url)"}')"
-          echo "Send notification successfully."
+            -d "$MESSAGE"
+
           echo "Sending Discord notification 2..."
           curl -X POST "$DISCORD_WEBHOOK_2" \
             -H "Content-Type: application/json" \
-            -d "$(jq -n \
-              --arg action "$ISSUE_ACTION" \
-              --arg user "$ISSUE_USER" \
-              --arg title "$ISSUE_TITLE" \
-              --arg url "$ISSUE_URL" \
-              '{content: "🛎️ Issue \($action) by \($user)\n🔖 \($title)\n🔗 \($url)"}')"
-          echo "Send notification successfully."
+            -d "$MESSAGE"
+
+          echo "Notifications sent successfully."
