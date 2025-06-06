@@ -4,19 +4,19 @@
     "url": "https://witaqua.org",
     "icon": "https://icons.duckduckgo.com/ip3/witaqua.org.ico",
     "slug": "wit-aqua",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "status": "up",
+    "uptime": "99.99%",
+    "uptimeDay": "98.77%",
+    "uptimeWeek": "99.82%",
+    "uptimeMonth": "99.96%",
+    "uptimeYear": "99.99%",
     "time": 341,
-    "timeDay": 316,
-    "timeWeek": 292,
-    "timeMonth": 280,
+    "timeDay": 315,
+    "timeWeek": 295,
+    "timeMonth": 281,
     "timeYear": 341,
     "dailyMinutesDown": {
-      "2025-06-06": 0
+      "2025-06-06": 18
     }
   },
   {
