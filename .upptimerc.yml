@@ -7,6 +7,11 @@ sites:
     assignees:
       - soralis0912
       - neroices
+  - name: WitAqua Download
+    url: https://download.witaqua.org
+    assignees:
+      - soralis0912
+      - neroices
   - name: WitAqua Wiki
     url: https://wiki.witaqua.org
     assignees:
