@@ -1,7 +1,7 @@
 url: https://gerrit.witaqua.org
-status: up
-code: 200
-responseTime: 419
-lastUpdated: 2025-10-30T23:13:50.163Z
+status: down
+code: 502
+responseTime: 555
+lastUpdated: 2025-10-31T06:46:39.827Z
 startTime: 2025-02-23T08:46:23.378Z
 generator: Upptime <https://github.com/upptime/upptime>
