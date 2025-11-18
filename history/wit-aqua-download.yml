@@ -1,7 +1,7 @@
 url: https://download.witaqua.org
-status: up
-code: 200
-responseTime: 721
-lastUpdated: 2025-11-17T23:14:41.602Z
+status: down
+code: 500
+responseTime: 191
+lastUpdated: 2025-11-18T11:50:08.155Z
 startTime: 2025-08-28T10:07:02.023Z
 generator: Upptime <https://github.com/upptime/upptime>
